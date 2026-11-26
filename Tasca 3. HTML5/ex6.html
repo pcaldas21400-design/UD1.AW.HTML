@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menú i taula</title>
+
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .taula {
+            width: 506px;
+            border: 1px solid gray;
+            padding: 2px;
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 2px;
+        }
+
+        .esquerra {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .blau {
+            height: 123px;
+            background-color: blue;
+            text-align: center;
+        }
+
+        .groc {
+            height: 123px;
+            background-color: yellow;
+            text-align: center;
+        }
+
+        .dreta {
+            display: grid;
+            grid-template-rows: 30px 30px 122px 60px;
+            gap: 2px;
+        }
+
+        .vermell {
+            background-color: red;
+            text-align: left;
+            padding: 5px;
+        }
+
+        .gris {
+            background-color: gray;
+            text-align: right;
+            padding: 5px;
+        }
+
+        .dues-columnes {
+            display: grid;
+            grid-template-columns: 147px 1fr;
+            gap: 2px;
+        }
+
+        .rosa {
+            background-color: deeppink;
+            text-align: center;
+        }
+
+        .verd {
+            background-color: #00ee55;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .lila {
+            background-color: #5200ee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inferior {
+            grid-column: 1 / 3;
+            background-color: lightsteelblue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Menú</h1>
+
+    <ol>
+        <li><a href="#taula">Taula A. Estructura</a></li>
+        <li><a href="#resultat">Taula B. Resultat</a></li>
+        <li><a href="#objecte">Objecte Insertat</a></li>
+    </ol>
+
+    <div id="taula" style="width: 506px; text-align: center;">
+        Taula A. Estructura
+    </div>
+
+    <div class="taula">
+
+        <div class="esquerra">
+            <div class="blau">
+                Aquí va el formulari
+            </div>
+
+            <div class="groc">
+                Inserirem un altre taula
+            </div>
+        </div>
+
+        <div class="dreta">
+
+            <div class="vermell">
+                Aquí provar alguns estils de lletres
+            </div>
+
+            <div class="gris">
+                Aquí provar tots els tipus d'enllaços
+            </div>
+
+            <div class="dues-columnes">
+
+                <div class="rosa">
+                    Exemple de llistes ordenades
+                </div>
+
+                <div class="verd">
+                    Exemple de llistes desordenades
+                </div>
+
+            </div>
+
+            <div class="lila">
+                Inserirem una imatge
+            </div>
+
+        </div>
+
+        <div class="inferior">
+            Aquí hi anirà el codi font
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercici 7 - Formulari i taules</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 5px;
+        font-family: "Times New Roman", serif;
+        font-size: 12px;
+        color: black;
+    }
+
+    .pagina {
+        width: 520px;
+        height: 290px;
+        border: 1px solid #777;
+        padding: 2px;
+        display: grid;
+        grid-template-columns: 163px 1fr;
+        grid-template-rows: 254px 30px;
+        gap: 2px;
+    }
+
+    .col-esquerra {
+        display: grid;
+        grid-template-rows: 128px 124px;
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .formulari {
+        background: #0800ed;
+        text-align: center;
+        padding: 2px 3px;
+        overflow: hidden;
+    }
+
+    .formulari h3 {
+        font-size: 13px;
+        margin: 0 0 7px;
+    }
+
+    .formulari label {
+        display: inline-block;
+    }
+
+    .formulari input[type="text"] {
+        width: 88px;
+        height: 13px;
+        padding: 0 2px;
+        font-size: 10px;
+    }
+
+    .formulari .petit {
+        width: 54px;
+    }
+
+    .formulari .fila {
+        margin: 1px 0;
+    }
+
+    .formulari .botons {
+        margin-top: 2px;
+    }
+
+    .formulari button {
+        font: 10px Arial, sans-serif;
+        padding: 0 5px;
+        height: 15px;
+    }
+
+    .formulari .opcions {
+        font-size: 11px;
+    }
+
+    .altre-taula {
+        background: yellow;
+        text-align: center;
+        padding: 2px;
+        overflow: hidden;
+    }
+
+    .altre-taula h3 {
+        margin: 0 0 8px;
+        font-size: 13px;
+    }
+
+    .altre-taula table {
+        border-collapse: collapse;
+        margin: 4px auto 0;
+        font-size: 10px;
+    }
+
+    .altre-taula td {
+        border: 1px solid #777;
+        width: 16px;
+        height: 14px;
+        text-align: center;
+        padding: 0;
+    }
+
+    .col-dreta {
+        display: grid;
+        grid-template-rows: 47px 34px 103px 66px;
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .estils {
+        background: #ff0808;
+        padding: 2px 4px;
+        overflow: hidden;
+    }
+
+    .estils h3 {
+        margin: 0 0 7px;
+        font-size: 13px;
+    }
+
+    .estils p {
+        margin: 0;
+        font-size: 10px;
+    }
+
+    .enllacos {
+        background: #999;
+        text-align: right;
+        padding: 9px 3px 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 11px;
+    }
+
+    .enllacos a {
+        color: #551a8b;
+    }
+
+    .llistes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        min-height: 0;
+    }
+
+    .ordenada {
+        background: #ff0060;
+        padding: 2px 3px;
+        overflow: hidden;
+    }
+
+    .desordenada {
+        background: #00ed55;
+        padding: 27px 3px 2px;
+        overflow: hidden;
+    }
+
+    .llistes h3 {
+        font-size: 13px;
+        margin: 0 0 8px;
+        white-space: nowrap;
+    }
+
+    .llistes ol,
+    .llistes ul {
+        margin: 0;
+        padding-left: 22px;
+        font-size: 11px;
+    }
+
+    .imatge {
+        background: #5100ed;
+        text-align: center;
+        padding: 1px;
+        overflow: hidden;
+    }
+
+    .imatge h3 {
+        margin: 0 0 8px;
+        font-size: 13px;
+    }
+
+    .editor {
+        width: 108px;
+        height: 42px;
+        margin: 0 auto;
+        background: #242424;
+        border: 1px solid #555;
+        padding: 3px 5px;
+        text-align: left;
+        overflow: hidden;
+        color: #ddd;
+        font: 5px/6px monospace;
+    }
+
+    .editor .c1 {
+        color: #e6a05b;
+    }
+
+    .editor .c2 {
+        color: #7bc4d8;
+    }
+
+    .editor .c3 {
+        color: #a4d17b;
+    }
+
+    .codi {
+        grid-column: 1 / 3;
+        background: #aec2d2;
+        text-align: center;
+        padding: 1px 3px;
+        overflow: hidden;
+    }
+
+    .codi h3 {
+        margin: 0 0 5px;
+        font-size: 13px;
+    }
+
+    .codi code {
+        font: 8px monospace;
+        white-space: nowrap;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="pagina">
+
+    <div class="col-esquerra">
+
+        <section class="formulari">
+            <h3>Formulari</h3>
+
+            <form action="#" method="get">
+
+                <div class="fila">
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+
+                <div class="fila">
+                    <label for="cognom">P:</label>
+                    <input type="text" id="cognom" name="cognom">
+                </div>
+
+                <div class="fila">
+                    <label for="sexe">SOR:</label>
+                    <input class="petit" type="text" id="sexe" name="sexe">
+                </div>
+
+                <div class="fila opcions">
+                    Professió:
+                    <label>
+                        <input type="checkbox" name="professio" value="estudiant">
+                        Estudiant
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="professio" value="treball">
+                        Treball
+                    </label>
+                </div>
+
+                <div class="fila opcions">
+                    Estat Civil:
+                    <label>
+                        <input type="radio" name="estat" value="si">
+                        Sí
+                    </label>
+
+                    <label>
+                        <input type="radio" name="estat" value="no">
+                        No
+                    </label>
+                </div>
+
+                <div class="fila opcions">
+                    Edat:
+                    <select name="edat">
+                        <option>Entre 16 i 20</option>
+                        <option>Menys de 16</option>
+                        <option>Més de 20</option>
+                    </select>
+                </div>
+
+                <div class="botons">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="altre-taula">
+
+            <h3>Inserirem un altre taula</h3>
+
+            <div>Taula</div>
+            <div>Prova</div>
+
+            <table>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                </tr>
+
+                <tr>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                </tr>
+
+                <tr>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>G</td>
+                    <td>J</td>
+                </tr>
+            </table>
+
+        </section>
+
+    </div>
+
+    <div class="col-dreta">
+
+        <section class="estils">
+
+            <h3>Aquí provar tots els estils de lletres</h3>
+
+            <p>
+                <b>Negreta</b>
+                <i>Itàlica</i>
+                <u>Subratllada</u>
+                <s>Destacada</s>
+                <em>"Entre cometes"</em>
+                Lletra petita
+                <strong>Remarcada</strong>
+                <del>lodo</del>
+                1; m²
+            </p>
+
+        </section>
+
+        <nav class="enllacos">
+
+            <a href="#menu">Tornar al menu</a> |
+            <a href="#taula">Tornar a la Taula A. Estructura</a> |
+            <a href="https://www.google.com">Google</a> |
+            <a href="#calendari">Calendari</a>
+
+        </nav>
+
+        <div class="llistes">
+
+            <section class="ordenada">
+
+                <h3>Exemple de llistes ordenades</h3>
+
+                <ol>
+                    <li>Aplicacions Web</li>
+                    <li>Sistemes operatius en xarxa</li>
+                    <li>Seguretat</li>
+                    <li>Bases de dades</li>
+                </ol>
+
+            </section>
+
+            <section class="desordenada">
+
+                <h3>Exemple de llistes desordenades</h3>
+
+                <ul>
+                    <li>Aplicacions Web</li>
+                    <li>Sistemes operatius en xarxa</li>
+                    <li>Seguretat</li>
+                    <li>Bases de dades</li>
+                </ul>
+
+            </section>
+
+        </div>
+
+        <section class="imatge">
+
+            <h3>Imatge</h3>
+
+            <div class="editor">
+                <span class="c1">&lt;html&gt;</span><br>
+                <span class="c2">&lt;head&gt;</span> &lt;title&gt;Web&lt;/title&gt;<br>
+                &lt;body&gt;<br>
+                <span class="c3">&lt;h1&gt;</span>Hola món&lt;/h1&gt;<br>
+                &lt;p&gt;Això és una web&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer class="codi">
+
+        <h3>Aquí hi anirà el codi font</h3>
+
+        <code>
+            function comprobar(V,f){ if (document.f1.nom.value=="")
+            {alert("Això no potser!"); return 0;}}
+        </code>
+
+    </footer>
+
+</div>
+</body>
+</html>
